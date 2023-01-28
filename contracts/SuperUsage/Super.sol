@@ -1,12 +1,15 @@
 //SPDX-License-Identifier: Unlicensed
 pragma solidity 0.8.17;
 
+
 abstract contract SuperAbstract {
+
+    event True();
 
     string internal _valueOne;
     string internal _valueTwo;
 
-    function _changeVariable() public virtual {
+    function changeVariable() public virtual {
         _valueOne = "Example";
     }
 
@@ -17,8 +20,9 @@ abstract contract SuperAbstract {
 
 contract Super is SuperAbstract {
 
-    function _changeVariable() public override {
+    function changeVariable() public override {
         _valueTwo = "Example2";
-        super._changeVariable();
+        super.changeVariable();
+        emit True();
     }
 }
