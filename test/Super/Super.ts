@@ -8,7 +8,7 @@ describe('SuperUsage', function () {
     let _valueTwo: string;
 
     this.beforeAll(async () => {
-        const Contract = await ethers.getContractFactory('contracts/SuperUsage/Super.sol:Super');
+        const Contract = await ethers.getContractFactory('contracts/SuperUsage/Super_UsingWithout_Struct.sol:Super');
         hardhatContract = await Contract.deploy();
     })
 
