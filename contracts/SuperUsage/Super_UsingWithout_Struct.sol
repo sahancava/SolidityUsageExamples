@@ -13,8 +13,8 @@ abstract contract SuperAbstract {
         _valueOne = "Example";
     }
 
-    function readVariable(int selection) public view virtual returns (string memory) {
-        return selection == 1 ? _valueOne : _valueTwo;
+    function readVariable(bool isFirstValue) public view virtual returns (string memory) {
+        return isFirstValue ? _valueOne : _valueTwo;
     }
 }
 
