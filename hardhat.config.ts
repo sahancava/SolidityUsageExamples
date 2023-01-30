@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from 'hardhat/config';
 import "@nomicfoundation/hardhat-toolbox";
+import "hardhat-gas-reporter";
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const config: HardhatUserConfig = {
@@ -16,6 +17,11 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 31337
     }
+  },
+  gasReporter: {
+    currency: 'USD',
+    gasPrice: 21,
+    enabled: true
   }
 }
 
