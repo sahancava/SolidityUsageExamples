@@ -13,8 +13,9 @@ abstract contract SuperAbstract {
         _valueOne = "Example";
     }
 
-    function readVariable(bool isFirstValue) public view virtual returns (string memory) {
-        return isFirstValue ? _valueOne : _valueTwo;
+    function readVariable(int selection) public view virtual returns (string memory) {
+        require(selection == 1 || selection == 2, "Selection can only by either 1 or 2.");
+        return selection == 1 ? _valueOne : _valueTwo;
     }
 }
 
