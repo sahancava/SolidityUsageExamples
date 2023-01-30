@@ -3,17 +3,19 @@ pragma solidity 0.8.17;
 
 contract GasChecker {
 
-    bool public _value = true;
+    bool public _value = false;
 
-    error CustomError(string);
+    bool public _value2 = false;
 
-    function changeVariable() public view returns (bool result) {
-        if(!_value) revert CustomError("Value is not true!");
-        return true;
+    error CustomError_Value_Should_Be__TRUE();
+
+    function changeVariable() public {
+        if(_value) revert CustomError_Value_Should_Be__TRUE();
+        _value2 = !_value2;
     }
 
-    function changeVariable_2() public view returns (bool result) {
-        require(_value, "Value is not true!");
-        return true;
+    function changeVariable_2() public {
+        require(1 == 1, 'CustomError_Value_Should_Be__TRUE');
+        _value2 = !_value2;
     }
 }

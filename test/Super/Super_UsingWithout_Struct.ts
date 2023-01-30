@@ -35,7 +35,7 @@ describe('SuperUsage', function () {
         it('_valueTwo variable should be `Example2`', async function () {
             expect(await hardhatContract.readVariable(2)).to.equal(_valueTwo);
         })
-        it('Shoul revert because selection is not 1 or 2', async function () {
+        it('Should revert because selection is not 1 or 2', async function () {
             await expect(hardhatContract.readVariable(3)).to.be.revertedWith('Selection can only by either 1 or 2.');
         })
     })
